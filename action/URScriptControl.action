@@ -1,9 +1,13 @@
 # Request
 
-# This command will deretmine which template 
-# will be parsed to yield a ur script. It has 
+# This command will deretmine which template
+# will be parsed to yield a ur script. It has
 # to be assured that a script template exists.
 string command
+
+# Global speed and acceleration scaling.
+float64 velocity_scaling 1.0
+float64 acceleration_scaling 1.0
 
 # If the URSG is to generate a move script,
 # additional parameters can be set.
@@ -25,10 +29,10 @@ float64 velocity
 bool use_execution_time
 float32 execution_time
 
-# Blend radius. If a blend radius is set, the robot arm trajectory 
+# Blend radius. If a blend radius is set, the robot arm trajectory
 # will be modified to avoid the robot stopping at the point.
 # However, if the blend region of this move overlaps with the blend
-# radius of previous or following waypoints, this move will be 
+# radius of previous or following waypoints, this move will be
 # skipped, and an ’Overlapping Blends’ warning message will be generated.
 bool use_blend_radius
 float32 blend_radius
@@ -50,7 +54,7 @@ Payload payload
 # Name of the frame in TF to go to.
 string goal_feature_name
 
-# Name of the TCP to be used to go to the goal feature frame. 
+# Name of the TCP to be used to go to the goal feature frame.
 string tcp_name
 
 # The maximum time that should be spent looking up tf.
